@@ -1,0 +1,20 @@
+<div>
+  <h3>Grades</h3>
+  <nz-table #nzTable [nzData]="grades" nzSize="small" [nzPageSize]="10">
+    <thead>
+      <tr>
+        <th>Grade Name</th>
+        <th>Min Req Experience</th>
+        <th>Max Req Experience</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of nzTable.data" (click)="edit(i)">
+        <td>{{i.name}}</td>
+        <td>{{i.minExperienceRequired}}</td>
+        <td>{{i.maxExperienceRequired}}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+
+</div>

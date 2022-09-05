@@ -1,0 +1,84 @@
+<button nz-button nzType="text"  style="margin:.5rem  ;" routerLink="/configuration/directory">
+  <i nz-icon nzType="arrow-left"></i>
+  Back to list</button>
+<div style="margin: .5rem 0rem 0rem 3rem; width: 80%;">
+  <button nz-button nzType="default" (click)="isVisible=true" nzSuccess style="margin: 0 0 .4rem;">
+    <i nz-icon nzType="plus"></i>Add Country
+</button>
+     
+    <div style="width: 40%; float: right;" >
+        <nz-input-group nzSearch [nzSuffix]="countrySearchTpl"z>
+          <input nz-input [(ngModel)]="countrySearch" (keydown)="search()" name="countrySearch" placeholder="Type name of a country..." >
+        
+          <ng-template #countrySearchTpl>
+            <button nz-button nzType="text" nzSize="small" nzSearch>
+              <i nz-icon nzType="search"></i>
+            </button>
+          </ng-template>
+        
+        </nz-input-group>
+        <small>Type country name and filter out</small>
+      </div>
+    
+    
+    
+    <nz-table style="margin: 1rem 0;"   #nzTable [nzData]="tableCountries" nzSize="small" [nzPageSize]="10">
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>Area Code</th>
+          <th>Iso Code</th>
+          
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of nzTable.data">
+          <td>{{i.name}}</td>
+          <td>{{i.areaCode}}</td>
+          <td>{{i.isoCode}}</td>
+          
+          <td>
+            <button nz-button nzType="link" nzSize="small" (click)="edit(i)">Edit</button>
+            <nz-divider nzType="vertical"></nz-divider>
+            <button nz-button nzType="link" nzSize="small" nzDanger (click)="del(i)">Remove</button>
+            <nz-divider nzType="vertical"></nz-divider>
+           
+            
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+</div>
+
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Create / Edit Country" 
+(nzOnCancel)="isVisible=false" (nzOnOk)="saveCountry()">
+  <ng-container *nzModalContent>
+    <form nz-form [formGroup]="countryForm" (ngSubmit)="saveCountry()" nzLayout="inline">
+      <nz-form-item  nzFlex>
+        <nz-form-control nzSpan="24">
+          <nz-form-label nzFor="name" nzSpan="24" nzRequired >Country Name</nz-form-label>
+          <input nz-input formControlName="name" id="name" name="name" placeholder="Enter Country Name">
+        </nz-form-control>
+      </nz-form-item>
+      <div nz-row nzGutter="1">
+        <nz-form-item nz-col nzSpan="10" nzOffset="1">
+          <nz-form-control >
+            <nz-form-label nzFor="iso_code"  nzSpan="12" nzOffset="1" nzRequired> Area Code</nz-form-label>
+            <input nz-input formControlName="areaCode" id="area_code" name="area_code" placeholder="Enter Area code">
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item  nz-col nzSpan="10" nzOffset="1" >
+          <nz-form-control>
+            <nz-form-label nzFor="iso_code"  nzSpan="12" nzOffset="1" nzRequired> Iso Code</nz-form-label>
+  
+            <input nz-input formControlName="isoCode" id="iso_code" name="Iso_code" placeholder="Enter Iso Code">
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      
+    </form>
+  </ng-container>
+</nz-modal>
+
+

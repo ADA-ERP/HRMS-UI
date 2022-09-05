@@ -1,0 +1,67 @@
+<button nz-button nzType="text"  style="margin:.5rem  ;" routerLink="/configuration/directory">
+    <i nz-icon nzType="arrow-left"></i>
+    Back to list</button>
+  <div style="margin: .5rem 0rem 0rem 3rem; width: 50%;">
+
+ 
+    <button nz-button nzType="default" (click)="isVisible=true" nzSuccess style="margin: 0 0 .1rem;">
+        <i nz-icon nzType="plus"></i>Add Field Of Study
+    </button>
+     
+    <div style="width: 40%; float: right;" >
+        <nz-input-group nzSearch [nzSuffix]="fieldOfStudySearchTpl"z>
+          <input nz-input [(ngModel)]="fieldOfStudySearch" (keydown)="search()" name="fieldSearch"
+           placeholder="Type name of a field..." >
+        
+          <ng-template #fieldOfStudySearchTpl>
+            <button nz-button nzType="text" nzSize="small" nzSearch>
+              <i nz-icon nzType="search"></i>
+            </button>
+          </ng-template>
+        
+        </nz-input-group>
+        <small>Type field name to filter out.</small>
+      </div>
+    
+    
+    
+    <nz-table style="margin: 1rem 0;"   #nzTable [nzData]="tableFieldOfStudies" nzSize="small" [nzPageSize]="10">
+      <thead>
+        <tr>
+          <th>FieldName</th>
+         
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of nzTable.data">
+          <td>{{i.name}}</td>
+          
+          <td>
+            <button nz-button nzType="link" nzSize="small" (click)="edit(i)">Edit</button>
+            <nz-divider nzType="vertical"></nz-divider>
+            <button nz-button nzType="link" nzSize="small" nzDanger (click)="del(i)">Remove</button>
+            <nz-divider nzType="vertical"></nz-divider>
+           
+            
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+</div>
+
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Create / Edit FieldName" 
+(nzOnCancel)="isVisible=false" (nzOnOk)="saveFieldOfStudy()">
+  <ng-container *nzModalContent>
+    <form nz-form [formGroup]="fieldOfStudyForm" (ngSubmit)="saveFieldOfStudy()" nzLayout="inline">
+      <nz-form-item  nzFlex>
+        <nz-form-control nzSpan="24">
+          <nz-form-label nzFor="name" nzSpan="24" nzRequired >Field Name</nz-form-label>
+          <input nz-input formControlName="name" id="name" name="name" placeholder="Enter Country Name">
+        </nz-form-control>
+      </nz-form-item>    
+    </form>
+  </ng-container>
+</nz-modal>
+
+

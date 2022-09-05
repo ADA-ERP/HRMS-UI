@@ -1,0 +1,90 @@
+<div nz-row nzType="flex" nzJustify="start" nzAlign="top" style="margin-bottom: 1rem;">
+  <button nz-button nzType="text" routerLink="/configuration/salary-structure">
+    <i nz-icon nzType="arrow-left"></i>
+    Back to list</button>
+</div>
+<form nz-form [formGroup]="salaryStructureForm" style="margin: 2rem;" 
+(ngSubmit)="_submitForm()" nzLayout="horizontal">
+ <div nz-row>
+  <nz-form-item nz-tooltip="Salary structure pay band describes name of the structure" nz-col [nzXs]="{ span: 24, offset: 1 }" [nzLg]="{ span:8, offset:1 }">
+    <nz-form-label nzFor="payBand" nzSpan="12" nzRequired>Pay Band(Name)</nz-form-label>
+    <nz-form-control nzSpan="23" nzSm="">
+      <input nz-input formControlName="payBand" id="payBand" name="payBand" placeholder="Enter Name Of Pay Band">
+    </nz-form-control>
+  </nz-form-item>
+
+
+  <nz-form-item  nz-col [nzXs]="{ span: 12, offset: 2 }" [nzLg]="{ span: 6, offset: 1 }">
+    <nz-form-label nzFor="minimum" nzSpan="23" nzRequired>Minimum Salary</nz-form-label>
+    <nz-form-control nzSpan="23" nzSm="">
+      <input nz-input formControlName="minimum" id="minimum" name="minimum" placeholder="Enter minimum">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item nz-col [nzXs]="{ span: 12, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+    <nz-form-label nzFor="midpoint" nzSpan="23" nzRequired>Midpoint Salary</nz-form-label>
+    <nz-form-control nzSpan="23" nzSm="">
+      <input nz-input formControlName="midpoint" id="midpoint" name="midpoint" placeholder="Enter  midpoint">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item nz-col [nzXs]="{ span: 12, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+    <nz-form-label nzFor="maximum" nzSpan="23" nzRequired>Max Salary</nz-form-label>
+    <nz-form-control nzSpan="23" nzSm="">
+      <input nz-input formControlName="maximum" id="maximum" name="maximum" placeholder="Enter  maximum">
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item nz-col [nzXs]="{ span: 12, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+    <nz-form-label nzFor="range" nzSpan="23" nzRequired>Rang (%)</nz-form-label>
+    <nz-form-control nzSpan="23" nzSm="">
+      <input nz-input formControlName="range" id="range" name="range" placeholder="Enter range">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item nz-col [nzXs]="{ span: 12, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+    <nz-form-label nzFor="spread" nzSpan="23" nzRequired>Spread</nz-form-label>
+    <nz-form-control nzSpan="23" nzSm="">
+      <input nz-input formControlName="spread" id="spread" name="spread" placeholder="Enter spread">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item nz-col [nzXs]="{ span: 12, offset: 1 }" [nzLg]="{ span: 8, offset: 2 }">
+    <nz-form-label nzFor="note" nzSpan="23" >Note</nz-form-label>
+    <nz-form-control nzSpan="23" nzSm="23">
+      <textarea nz-input formControlName="note" id="note" name="note" [nzAutosize]="true" placeholder="Type about this salary structure"></textarea>
+    </nz-form-control>
+  </nz-form-item>
+  
+ </div>
+
+ <div nz-row>
+  <nz-form-item nz-col [nzXs]="{ span: 23, offset: 1 }" [nzLg]="{ span: 4, offset: 1 }">
+  
+    <nz-form-control nzSpan="23" nzSm="23" nzOffset="0">
+     <button nz-button nzType="default" [nzLoading]="saving" type="submit">Save Structure</button>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item nz-col  [nzXs]="{ span: 23, offset: 1 }" [nzLg]="{ span: 4, offset: 1 }">
+  
+    <nz-form-control nzSpan="23" nzSm="23" nzOffset="0" *ngIf="strId>0">
+      <button nz-button nzType="default" type="button" (click)="isVisible=true" nzDanger>Delete Structure</button>
+     </nz-form-control>
+  </nz-form-item>
+ </div>
+  
+</form>
+
+
+
+<nz-modal
+[(nzVisible)]="isVisible"
+nzOkText="Delete"
+nzOkDanger="true"
+nzCancelText="Cancel"
+(nzOnOk)="delete()"
+(nzOnCancel)="isVisible=false"
+>
+<ng-container *nzModalContent >
+  Are you sure,want to delete {{this.salaryStructureForm.value['payBand']}}
+</ng-container>
+</nz-modal>

@@ -1,0 +1,21 @@
+
+ <nz-header  nz-space nzAlign="center">
+    <div class="logo"></div>
+    <ul nz-menu  nzMode="horizontal"  class="header-menu" >
+      <li  nz-menu-item> 
+        <a [routerLink]="['/', 'dashboard']" >Dashboard</a>     
+      </li>
+      
+      <li  nz-menu-item>
+        <a [routerLink]="['/configuration']" routerLinkActive="active">Configuration</a>
+      </li>
+
+      <li  nz-menu-item>
+        <a [routerLink]="['/', 'employee']" >Employee</a>
+      </li>
+      
+      <li  nz-menu-item>
+        <a [routerLink]="['/', 'setting']" >Setting</a>     
+      </li>
+    </ul>
+  </nz-header>

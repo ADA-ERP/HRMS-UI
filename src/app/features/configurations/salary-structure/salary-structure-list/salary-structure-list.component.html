@@ -1,0 +1,30 @@
+<div>
+    <button nz-button nzType="default" style="margin-bottom: 1rem;" routerLink="salary-structure-create/0">
+        <i nz-icon nzType="plus"></i>
+        Add Salary Structure
+    </button>
+    <nz-table #nzTable nzSize="small" [nzLoading]="isLoading" 
+   
+    [nzData]="SalaryStructures" nzBordered="false" class="shadow" [nzPageSize]="8">
+        <thead>
+          <tr>
+            <th>PayBand</th>            
+            <th>Minimum</th>
+            <th>MidPoint</th>
+            <th>Maximum</th>
+            <th>Spread (%)</th>
+            <th>Rang (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of nzTable.data" routerLink="salary-structure-create/{{i.id}}">
+            <td>{{i.payBand}}</td>
+            <td>{{i.minimum}}</td>
+            <td>{{i.midpoint}}</td>
+            <td>{{i.maximum}}</td>
+            <td>{{i.range}}</td>
+            <td>{{i.spread}}</td>
+        </tbody>
+      </nz-table>
+</div>
+

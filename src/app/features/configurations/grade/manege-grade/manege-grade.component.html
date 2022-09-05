@@ -1,0 +1,105 @@
+
+<div nz-row nzType="flex" nzJustify="start" nzAlign="top" style="margin-bottom: 1rem;">
+  <button nz-button nzType="text" routerLink="/configuration/grade">
+    <i nz-icon nzType="arrow-left"></i>
+    Back to list</button>
+</div>
+<form nz-form [formGroup]="gradeFrom" (ngSubmit)="_submitForm()" nzLayout="vertical" style="margin-left:3rem ;">
+
+  <h4>Grade Add/edit</h4>
+   <small>Grade is essential field while creating position wich helps to provide distinction among positions</small>
+    <div nz-row>
+      <nz-form-item nz-col [nzXs]="{ span: 24, offset: 1 }" [nzLg]="{ span:8, offset:1 }">
+        <nz-form-label nzFor="name" nzSpan="12" nzRequired 
+        nzTooltipIcon="question-circle"
+         nzTooltipTitle="Grade name that best identify from other grades."
+         >Grade Name</nz-form-label>
+        <nz-form-control nzSpan="23" nzSm="">
+          <input nz-input formControlName="name" id="name" name="name" placeholder="Type Grade Name ">
+        </nz-form-control>
+      </nz-form-item>
+    
+    
+      <nz-form-item  nz-col [nzXs]="{ span: 12, offset: 2 }" [nzLg]="{ span: 6, offset: 1 }" >
+        <nz-form-label nzFor="minExperienceRequired" nzSpan="23" nzRequired
+        nzTooltipIcon="question-circle"
+        nzTooltipTitle="Maximum year of experience required to be under this grade" 
+        >Min Exp. Req. </nz-form-label>
+        <nz-form-control nzSpan="23" nzSm="">
+          <nz-input-number style="width: 100%" formControlName="minExperienceRequired" id="minExperienceRequired" 
+          name="minExperienceRequired" placeholder="Enter minimum"></nz-input-number>
+        </nz-form-control>
+      </nz-form-item>
+    
+      <nz-form-item nz-col [nzXs]="{ span: 12, offset: 1 }" [nzLg]="{ span:6, offset: 1 }" 
+      nzTooltipIcon="question-circle"
+      nzTooltipTitle="Maximum year of experience required to be under this grade" 
+     >
+        <nz-form-label nzFor="maxExperienceRequired" nzSpan="23" nzRequired
+        nzTooltipIcon="question-circle"
+        nzTooltipTitle="Maximum year of experience required to be under this grade" 
+        >Max Exp. Req.</nz-form-label>
+        <nz-form-control nzSpan="23" nzSm="">
+          <nz-input-number  style="width: 100%" formControlName="maxExperienceRequired" id="maxExperienceRequired"
+           name="maxExperienceRequired" placeholder="eg. 3 in year"></nz-input-number>
+        </nz-form-control>
+      </nz-form-item>
+    
+     
+      <nz-form-item nz-col [nzXs]="{ span: 12, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+        <nz-form-label nzFor="salaryStructureId" nzSpan="23" nzRequired>Salary Structure (%)</nz-form-label>
+        <nz-form-control nzSpan="23" nzSm="">
+          <nz-select formControlName="salaryStructureId"
+          nzPlaceHolder="Select salary structure"
+          nzAllowClear
+          nzShowSearch
+          >
+            <ng-container *ngFor="let o of salaryStructures">
+              <nz-option *ngIf="!isLoading" [nzValue]="o.id" [nzLabel]="o.payBand"></nz-option>
+            </ng-container>
+            <nz-option *ngIf="isLoading" nzDisabled nzCustomContent>
+              <i nz-icon nzType="loading" class="loading-icon"></i>
+              Loading Data...
+            </nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+    
+      <nz-form-item nz-col [nzXs]="{ span: 12, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+        <nz-form-label nzFor="Field of Study" nzSpan="23" nzRequired
+        nzTooltipIcon="question-circle"
+        nzTooltipTitle="Required field of study for this grade to be assigned to position"
+        >Field of Study</nz-form-label>
+        <nz-form-control nzSpan="23" nzSm="">
+          <nz-select formControlName="fieldOfStudyId"
+          nzPlaceHolder="Select Field Of Study "
+          nzAllowClear
+          nzShowSearch>
+            <ng-container *ngFor="let o of fieldOfStudy">
+              <nz-option *ngIf="!isLoading" [nzValue]="o.id" [nzLabel]="o.name"></nz-option>
+            </ng-container>
+            <nz-option *ngIf="isLoading" nzDisabled nzCustomContent>
+              <i nz-icon nzType="loading" class="loading-icon"></i>
+              Loading Data...
+            </nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+
+    </div>
+     <div nz-row>
+      <nz-form-item nz-col [nzXs]="{ span: 23, offset: 1 }" [nzLg]="{ span: 4, offset: 1 }">
+      
+        <nz-form-control nzSpan="23" nzSm="23" nzOffset="0">
+         <button nz-button nzType="default" [nzLoading]="saving" type="submit">Save Grade</button>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item nz-col  [nzXs]="{ span: 23, offset: 1 }" [nzLg]="{ span: 4, offset: 1 }">
+      
+        <nz-form-control nzSpan="23" nzSm="23" nzOffset="0" *ngIf="gId>0">
+          <button nz-button nzType="default" type="button" (click)="isVisible=true" nzDanger>Delete Grade</button>
+         </nz-form-control>
+      </nz-form-item>
+     </div>
+      
+</form>

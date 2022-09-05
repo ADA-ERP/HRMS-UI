@@ -1,0 +1,32 @@
+.logo {
+    width: 120px;
+    height: 31px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 9px 8px 9px 0;
+  float: left;
+  }
+  nz-header  {
+    background:#293462;
+    height: 3.5rem;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+  }
+  nz-header ul{
+    background: #293462;
+    border: none;
+  }
+  .header-menu {
+    line-height: 3.5rem;      
+    display:flex;   
+    justify-content:center;
+}
+
+nz-header ul li a{
+  text-decoration: none;
+  color: white;
+  font-family: Poppins;
+  &.active{
+    font-weight: bolder;
+  }
+}
