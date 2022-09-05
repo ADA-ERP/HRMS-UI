@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { PositionService } from 'src/app/core/services/position.service';
 
@@ -28,6 +29,7 @@ export class ManegeEditSalaryStructureComponent implements OnInit {
   constructor(private fb:FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
+    private modal: NzModalService,
     private positionService:PositionService,
     private notification: NzNotificationService
   ) { }
@@ -37,11 +39,14 @@ export class ManegeEditSalaryStructureComponent implements OnInit {
      const id =  this.route.snapshot.paramMap.get('id');
      
     if(id && Number(id)>0)
-     this.strId = Number(id);
-    this.positionService.getSalaryStructureById(Number(this.strId))
-    .subscribe(result=>{
-      this.salaryStructureForm.setValue(result);
-    });
+    {
+      this.strId = Number(id);
+      this.positionService.getSalaryStructureById(Number(this.strId))
+      .subscribe(result=>{
+        this.salaryStructureForm.setValue(result);
+      });
+    }
+    
   }
   _submitForm(){
     console.log(this.salaryStructureForm.value);
@@ -92,7 +97,19 @@ export class ManegeEditSalaryStructureComponent implements OnInit {
 
   }
  
- 
+  showDeleteConfirm(): void {
+    this.modal.confirm({
+      nzTitle: 'Are you sure delete this Salary Structure?',
+      nzContent: `<b style="color: red;">${this.salaryStructureForm.value['payBand']}  is going to be deleted</b>`,
+      nzOkText: 'Yes',
+      nzOkType: 'primary',
+      nzOkDanger: true,
+      nzOnOk: () => this.delete(),
+      nzCancelText: 'No',
+      nzOnCancel: () => console.log('Cancel')
+    });
+  }
+
   delete(){
     if(this.strId>0)
     {

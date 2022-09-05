@@ -1,24 +1,10 @@
 <div style="background: #ffffff;padding:30px;">
     <div nz-row [nzGutter]="8">
-      <div nz-col [nzSpan]="8" nzSm="24" nzMd="12" nzLg="8" nzXl="12" nzXs="23"  nzXXl="8" style="margin-top: .9rem;">
-        <nz-card  nzHoverable="true" (click)="navigateToDirectory('country')">
-            <span nz-icon nzType="compass" nzTheme="outline" >  </span>
-                <h3> Country </h3>
-            <p>List of Countries</p>
-        </nz-card>
-      </div>
-      <div nz-col [nzSpan]="8" nzSm="24" nzMd="12" nzLg="8" nzXl="12" nzXs="23"  nzXXl="8" style="margin-top: .9rem;">
-        <nz-card nzHoverable="true" (click)="navigateToDirectory('field-of-study')">
-            <span nz-icon nzType="book" nzTheme="outline"></span>
-            <h3>Field Of Study</h3>
-             <p>List of Field of study</p>
-        </nz-card>
-      </div>
-      <div nz-col [nzSpan]="8" nzXl="12" nzSm="24" nzMd="12" nzLg="8" nzXs="23" nzXXl="8" style="margin-top: .9rem;">
-        <nz-card  nzHoverable="true" (click)="navigateToDirectory('language')">
-         <span nz-icon nzType="book" nzTheme="outline"></span>
-         <h3>Language</h3>
-         <p>List of Languages</p>
+      <div  *ngFor="let item of directories" nz-col [nzSpan]="8" nzSm="24" nzMd="12" nzLg="8" nzXl="8" nzXs="23"  nzXXl="6" style="margin-top: .9rem;" >
+        <nz-card  nzHoverable="true" (click)="navigateToDirectory(item.link)">
+            <span nz-icon [nzType]="item.icon" nzTheme="outline" >  </span>
+                <h3> {{item.title}} </h3>
+            <p>{{item.description}}</p>
         </nz-card>
       </div>
     </div>

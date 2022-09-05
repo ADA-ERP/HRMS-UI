@@ -1,6 +1,6 @@
 <button nz-button nzType="text"  style="margin:.5rem  ;" routerLink="/configuration/directory">
     <i nz-icon nzType="arrow-left"></i>
-    Back to list</button>
+     Directories</button>
   <div style="margin: .5rem 0rem 0rem 3rem; width: 50%;">
 
  
@@ -51,7 +51,9 @@
 </div>
 
 <nz-modal [(nzVisible)]="isVisible" nzTitle="Create / Edit FieldName" 
-(nzOnCancel)="isVisible=false" (nzOnOk)="saveFieldOfStudy()">
+nzOkText="Save"
+[nzOkLoading]="saving"
+(nzOnCancel)="isVisible=false; fieldOfStudyForm.reset()" (nzOnOk)="saveFieldOfStudy()">
   <ng-container *nzModalContent>
     <form nz-form [formGroup]="fieldOfStudyForm" (ngSubmit)="saveFieldOfStudy()" nzLayout="inline">
       <nz-form-item  nzFlex>

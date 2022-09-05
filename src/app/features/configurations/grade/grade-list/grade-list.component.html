@@ -1,5 +1,9 @@
 <div>
   <h3>Grades</h3>
+  <button nz-button nzType="default" style="margin-bottom: 1rem;" routerLink="grade/-1">
+    <i nz-icon nzType="plus"></i>
+    Add Grade
+</button>
   <nz-table #nzTable [nzData]="grades" nzSize="small" [nzPageSize]="10">
     <thead>
       <tr>

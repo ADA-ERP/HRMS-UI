@@ -15,4 +15,9 @@ export class EducationService {
   getFieldOfStudy():Observable<FieldOfStudy[]>{
     return this.http.get<FieldOfStudy[]>(`${this.baseUrl}FieldOfStudy`);
   }
+
+  addFieldOfStudy(fieldOfStudy:FieldOfStudy):Observable<FieldOfStudy>{
+    return this.http.post<FieldOfStudy>(`${this.baseUrl}FieldOfStudy`,fieldOfStudy);
+
+  }
 }

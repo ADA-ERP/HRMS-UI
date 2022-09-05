@@ -97,9 +97,10 @@
       <nz-form-item nz-col  [nzXs]="{ span: 23, offset: 1 }" [nzLg]="{ span: 4, offset: 1 }">
       
         <nz-form-control nzSpan="23" nzSm="23" nzOffset="0" *ngIf="gId>0">
-          <button nz-button nzType="default" type="button" (click)="isVisible=true" nzDanger>Delete Grade</button>
+          <button nz-button nzType="default" type="button" (click)="showDeleteConfirm()" nzDanger>Delete Grade</button>
          </nz-form-control>
       </nz-form-item>
      </div>
       
 </form>
+

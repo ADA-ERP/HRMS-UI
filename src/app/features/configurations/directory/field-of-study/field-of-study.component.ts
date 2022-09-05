@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { FieldOfStudy } from 'src/app/core/models/fieldOfStudy';
+import { EducationService } from 'src/app/core/services/education.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -12,22 +14,26 @@ import { environment } from 'src/environments/environment';
 export class FieldOfStudyComponent implements OnInit {
 
   isVisible=false;
+  saving=false;
   baseUrl=environment.apiHost;
   tableFieldOfStudies:any[]=[];
   FieldOfStudies:FieldOfStudy[]=[];
   fieldOfStudySearch:string='';
   fieldOfStudyForm:FormGroup=this.fb.group({
-    id:[],
-    name:['',[Validators.requiredTrue]],
+    id:[0],
+    name:['',[Validators.required]],
   })
-  constructor(private fb:FormBuilder,private http:HttpClient) { }
+  constructor(private fb:FormBuilder,
+    private http:HttpClient,
+    private educationService:EducationService,
+    private notification: NzNotificationService) { }
 
   ngOnInit(): void {
     this.loadFieldOfStudies();
   }
 
   loadFieldOfStudies(){
-    this.http.get<FieldOfStudy[]>(`${this.baseUrl}FieldOfStudy`).subscribe(result=>this.tableFieldOfStudies=this.FieldOfStudies=result)
+    this.educationService.getFieldOfStudy().subscribe(result=>this.tableFieldOfStudies=this.FieldOfStudies=result)
   }
   edit(fieldOfStudy:any){
     this.fieldOfStudyForm.setValue(fieldOfStudy);
@@ -41,9 +47,30 @@ export class FieldOfStudyComponent implements OnInit {
 
   saveFieldOfStudy()
   {
+    this.saving=true;
     if(this.fieldOfStudyForm.valid)
     {
-
+      this.educationService.addFieldOfStudy(this.fieldOfStudyForm.value).subscribe(result=>{
+        this.FieldOfStudies.push(result);
+        this.notification
+        .create(
+          'success',
+          'Salary Structure',
+        'SalaryStructure Created successfully!.',
+      );
+        
+      },error=>{
+        this.notification
+        .create(
+          'danger',
+          'Salary Structure',
+        'Could not save salary structure.',
+      );
+       },()=>{ this.isVisible=true;
+        this.saving=false;
+        this.fieldOfStudyForm.reset();
+      });
+        
     }
   }
 
@@ -59,6 +86,8 @@ export class FieldOfStudyComponent implements OnInit {
     }
 
   }
+
+  
 }
 
 

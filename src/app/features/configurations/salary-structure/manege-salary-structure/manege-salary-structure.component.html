@@ -67,7 +67,7 @@
   <nz-form-item nz-col  [nzXs]="{ span: 23, offset: 1 }" [nzLg]="{ span: 4, offset: 1 }">
   
     <nz-form-control nzSpan="23" nzSm="23" nzOffset="0" *ngIf="strId>0">
-      <button nz-button nzType="default" type="button" (click)="isVisible=true" nzDanger>Delete Structure</button>
+      <button nz-button nzType="default" type="button" (click)="showDeleteConfirm()" nzDanger>Delete Structure</button>
      </nz-form-control>
   </nz-form-item>
  </div>
@@ -76,15 +76,3 @@
 
 
 
-<nz-modal
-[(nzVisible)]="isVisible"
-nzOkText="Delete"
-nzOkDanger="true"
-nzCancelText="Cancel"
-(nzOnOk)="delete()"
-(nzOnCancel)="isVisible=false"
->
-<ng-container *nzModalContent >
-  Are you sure,want to delete {{this.salaryStructureForm.value['payBand']}}
-</ng-container>
-</nz-modal>

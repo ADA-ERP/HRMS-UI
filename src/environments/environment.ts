@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   appName:"ADA HRM",
-  apiHost:"https://localhost:7175/api/v0/"
+  apiHost:"https://localhost:7093/api/v0/"
   
 };
 
