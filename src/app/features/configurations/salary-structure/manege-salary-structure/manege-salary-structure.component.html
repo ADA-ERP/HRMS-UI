@@ -1,9 +1,11 @@
-<div nz-row nzType="flex" nzJustify="start" nzAlign="top" style="margin-bottom: 1rem;">
-  <button nz-button nzType="text" routerLink="/configuration/salary-structure">
-    <i nz-icon nzType="arrow-left"></i>
-    Back to list</button>
-</div>
-<form nz-form [formGroup]="salaryStructureForm" style="margin: 2rem;" 
+<nz-page-header
+(nzBack)="redirectToSalaryStructureList()"
+nzBackIcon
+nzTitle="Salary Structure"
+nzSubtitle="Create/edit Salary Structure"
+>
+<nz-page-header-content>
+<form nz-form [formGroup]="salaryStructureForm" 
 (ngSubmit)="_submitForm()" nzLayout="horizontal">
  <div nz-row>
   <nz-form-item nz-tooltip="Salary structure pay band describes name of the structure" nz-col [nzXs]="{ span: 24, offset: 1 }" [nzLg]="{ span:8, offset:1 }">
@@ -73,6 +75,7 @@
  </div>
   
 </form>
-
+</nz-page-header-content>
+</nz-page-header>
 
 

@@ -21,6 +21,7 @@ export class DirectoryListComponent implements OnInit {
     {title:'Language',icon:'compass',description:'List of Language',link:'language'},
     {title:'Title',icon:'compass',description:'List of Titles',link:'title'},
     {title:'Education Institution',icon:'compass',description:'List of Education Institution',link:'institution'},
+    {title:'Parameter Value',icon:'Setting',description:'List of Parameter value',link:'parameter-value'},
   ]
   constructor(private route:Router,private router:ActivatedRoute) { }
  

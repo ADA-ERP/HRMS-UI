@@ -6,14 +6,14 @@
   float: left;
   }
   nz-header  {
-    background:#293462;
+    background:#090d1b;
     height: 3.5rem;
     position: fixed;
     width: 100%;
     z-index: 100;
   }
   nz-header ul{
-    background: #293462;
+    background: #0f1325;
     border: none;
   }
   .header-menu {
@@ -27,6 +27,6 @@ nz-header ul li a{
   color: white;
   font-family: Poppins;
   &.active{
-    font-weight: bolder;
+    font-weight: 700;
   }
 }

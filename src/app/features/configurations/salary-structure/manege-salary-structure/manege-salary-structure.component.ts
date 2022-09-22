@@ -67,7 +67,7 @@ export class ManegeEditSalaryStructureComponent implements OnInit {
           'Salary Structure',
         'SalaryStructure Created successfully!.',
       )
-        this.router.navigate(["/configuration/salary-structure"]);
+        this.redirectToSalaryStructureList();
 
       }
       )
@@ -89,7 +89,7 @@ export class ManegeEditSalaryStructureComponent implements OnInit {
         'Salary Structure',
         'SalaryStructure updated successfully!.',
       )
-      this.router.navigate(["/configuration/salary-structure"]);
+      this.redirectToSalaryStructureList();
 
     }
     )
@@ -127,11 +127,15 @@ export class ManegeEditSalaryStructureComponent implements OnInit {
          'SalaryStructure deleted successfully!.',
       )
        this.isVisible=false;
-        this.router.navigate(["/configuration/salary-structure"]);
+        this.redirectToSalaryStructureList();
 
       }
       )
 
     }
+  }
+
+  public redirectToSalaryStructureList() {
+    this.redirectToSalaryStructureList();
   }
 }

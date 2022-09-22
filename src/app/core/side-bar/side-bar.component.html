@@ -5,7 +5,7 @@
       <li *ngIf="!menu.children" nz-menu-item [nzPaddingLeft]="menu.level * 24" [nzDisabled]="menu.disabled"
         [nzSelected]="menu.selected">
 
-        <a [routerLink]="[menu.route]" style="font-weight: 600; font-size:.8rem ;"> 
+        <a [routerLink]="[menu.route]" style="font-weight: 600; font-size:.9rem ;"> 
           <i nz-icon  [nzType]="menu.icon"  *ngIf="menu.icon"> </i> 
           <span> {{ menu.title}}</span>
         </a>

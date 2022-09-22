@@ -82,7 +82,7 @@ export class ManegeEditGradeComponent implements OnInit {
                 'Grade updated successfully!.',
 
               )
-            this.route.navigate(['/configuration/grade']);
+            this.redirectToGradeList();
           }
         }, null, () => { this.saving = false; });
     } 
@@ -100,13 +100,17 @@ export class ManegeEditGradeComponent implements OnInit {
                   'Grade Created successfully!.',
 
                 )
-              this.route.navigate(['/configuration/grade',]);
+              this.redirectToGradeList();
             }
           }, null, () => { this.saving = false; }
         );
     }
   }
   
+  public redirectToGradeList() {
+    this.route.navigate(['/configuration/grade']);
+  }
+
   delete() {
     this.positionService.deleteGrade(this.gId).subscribe(result => {
       if (result)

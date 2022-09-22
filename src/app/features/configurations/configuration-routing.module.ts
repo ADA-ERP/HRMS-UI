@@ -15,6 +15,8 @@ import { PositionComponent } from './position/position.component';
 import { ManegeEditSalaryStructureComponent } from './salary-structure/manege-salary-structure/manege-salary-structure.component';
 import { SalaryStructureListComponent } from './salary-structure/salary-structure-list/salary-structure-list.component';
 import { SalaryStructureComponent } from './salary-structure/salary-structure.component';
+import { CompanyComponent } from './company/company.component';
+import { ManageCompanyComponent } from './company/manage-company/manage-company.component';
 
 const routes: Routes = [
  
@@ -64,6 +66,12 @@ const routes: Routes = [
           
         ]
       },
+      {
+        path: 'company', component: CompanyComponent,
+        children: [
+          { path: 'edit/:id', component: ManageCompanyComponent },
+        ]
+      }
     ]
   },
 

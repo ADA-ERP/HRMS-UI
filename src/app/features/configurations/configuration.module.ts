@@ -19,6 +19,8 @@ import { CountryComponent } from './directory/country/country.component';
 import { LanguageComponent } from './directory/language/language.component';
 import { DirectoryListComponent } from './directory/directory-list/directory-list.component';
 import { FormsModule } from '@angular/forms';
+import { CompanyComponent } from './company/company.component';
+import { ManageCompanyComponent } from './company/manage-company/manage-company.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { FormsModule } from '@angular/forms';
     FieldOfStudyComponent,
     CountryComponent,
     LanguageComponent,
-    DirectoryListComponent
+    DirectoryListComponent,
+    CompanyComponent,
+    ManageCompanyComponent
   ],
   imports: [
     CommonModule,   

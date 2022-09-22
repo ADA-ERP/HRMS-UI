@@ -68,7 +68,7 @@ export class ManegePositionComponent implements OnInit {
        },()=>{this.deleteLoading=true;  this.isVisible=false;   });
   }
 
-  private redirectToPositionList() {
+  public redirectToPositionList() {
     this.route.navigate(["/configuration/position"]);
   }
 }
