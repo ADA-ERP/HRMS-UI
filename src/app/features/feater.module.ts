@@ -8,9 +8,9 @@ import { RouterModule } from '@angular/router';
 
 
 @NgModule({
- 
+
   declarations: [ MainPageComponent],
- 
+
   imports: [
     CommonModule,
     SharedModule,

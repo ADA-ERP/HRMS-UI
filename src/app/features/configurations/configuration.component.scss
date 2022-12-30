@@ -1,18 +1,19 @@
-.outer-content {
-    padding: 0 10px;
-  }
 
- 
 
- 
-  .inner-layout {
-    padding: 24px 0;
-    background: #fff;
-  }
+.inner-layout {
+  padding: 0 12px 12px;
+}
 
- 
-  .inner-content {
-    min-height: 480px;
-  }
+nz-breadcrumb {
+  margin: 10px 0;
+}
+.inner-content {
+  background-color: white;
+  padding: 2px;
+  min-height: 380px;
+}
 
- 
+nz-sider{
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+}
