@@ -21,7 +21,7 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",            
+            "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
@@ -76,7 +76,7 @@
               "browserTarget": "ADA.HRMS.Client:build:development",
               "sslKey":"ssl/key.pem",
               "sslCert":"ssl/https.crt",
-              "ssl":true
+              "ssl":false
             }
           },
           "defaultConfiguration": "development"
@@ -108,5 +108,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

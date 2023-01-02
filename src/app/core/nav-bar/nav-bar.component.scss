@@ -1,32 +1,34 @@
 .logo {
     width: 120px;
     height: 31px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(56, 55, 55, 0.2);
     margin: 9px 8px 9px 0;
   float: left;
   }
   nz-header  {
-    background:#090d1b;
+    background:#ffffff;
     height: 3.5rem;
     position: fixed;
     width: 100%;
     z-index: 100;
   }
   nz-header ul{
-    background: #0f1325;
+    background: #ffffff;
     border: none;
   }
   .header-menu {
-    line-height: 3.5rem;      
-    display:flex;   
+    line-height: 3.5rem;
+    display:flex;
     justify-content:center;
 }
 
 nz-header ul li a{
   text-decoration: none;
-  color: white;
+  color: rgb(82, 82, 82);
+  font-weight: 900;
   font-family: Poppins;
   &.active{
-    font-weight: 700;
+    font-weight: bolder;
+    color: rgb(23, 23, 23);
   }
 }
