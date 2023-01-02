@@ -1,32 +1,39 @@
 .logo {
     width: 120px;
     height: 31px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(34, 21, 21, 0.2);
     margin: 9px 8px 9px 0;
-  float: left;
+   float: left;
+   margin-left: 1rem;
   }
-  nz-header  {
-    background:#090d1b;
-    height: 3.5rem;
+  nz-header {
     position: fixed;
+    height: 3rem;
+    line-height: 3rem;
+    padding: 0;
     width: 100%;
     z-index: 100;
+
+    background-color:#fff;
   }
-  nz-header ul{
-    background: #0f1325;
-    border: none;
+
+  nz-header ul {
+    display: flex;
+    justify-content: center;
   }
-  .header-menu {
-    line-height: 3.5rem;      
-    display:flex;   
-    justify-content:center;
-}
+
 
 nz-header ul li a{
   text-decoration: none;
-  color: white;
-  font-family: Poppins;
+  font-size: .8rem;
+  font-weight: 700;
+  font-stretch: condensed;
+  color: rgb(78, 78, 78);
+  font-family: Poppins 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   &.active{
-    font-weight: 700;
+    font-weight: bolder;
+  color: rgb(0, 0, 0);
+
   }
 }
+
