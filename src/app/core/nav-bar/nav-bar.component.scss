@@ -1,20 +1,25 @@
 .logo {
     width: 120px;
     height: 31px;
-    background: rgba(56, 55, 55, 0.2);
+    background: rgba(34, 21, 21, 0.2);
     margin: 9px 8px 9px 0;
-  float: left;
+   float: left;
+   margin-left: 1rem;
   }
-  nz-header  {
-    background:#ffffff;
-    height: 3.5rem;
+  nz-header {
     position: fixed;
+    height: 3rem;
+    line-height: 3rem;
+    padding: 0;
     width: 100%;
     z-index: 100;
+    box-shadow: 2px 1px 2px rgb(224, 224, 224);
+    background-color:rgb(255, 255, 255);
   }
-  nz-header ul{
-    background: #ffffff;
-    border: none;
+
+  nz-header ul {
+    display: flex;
+    justify-content: center;
   }
   .header-menu {
     line-height: 3.5rem;
@@ -24,11 +29,9 @@
 
 nz-header ul li a{
   text-decoration: none;
-  color: rgb(82, 82, 82);
-  font-weight: 900;
+  color: rgb(45, 44, 44);
   font-family: Poppins;
   &.active{
-    font-weight: bolder;
-    color: rgb(23, 23, 23);
+    font-weight: 700;
   }
 }
