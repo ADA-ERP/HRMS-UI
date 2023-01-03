@@ -13,26 +13,26 @@
     padding: 0;
     width: 100%;
     z-index: 100;
-
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
     background-color:#fff;
   }
 
   nz-header ul {
     display: flex;
-    justify-content: center;
+    justify-content: start;
   }
 
 
 nz-header ul li a{
   text-decoration: none;
   font-size: .8rem;
-  font-weight: 700;
+  font-weight: 900;
   font-stretch: condensed;
-  color: rgb(78, 78, 78);
-  font-family: Poppins 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(105, 105, 105);
+  font-family: Poppins ;
   &.active{
     font-weight: bolder;
-  color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
 
   }
 }

@@ -4,12 +4,14 @@
     <i nz-icon nzType="plus"></i>
     Add Grade
 </button>
-  <nz-table #nzTable [nzData]="grades" nzSize="small" [nzPageSize]="10">
+  <nz-table #nzTable #sortTable [nzData]="grades" nzSize="small" [nzPageSize]="10">
     <thead>
       <tr>
-        <th>Grade Name</th>
-        <th>Min Req Experience</th>
-        <th>Max Req Experience</th>
+        <th *ngFor="let column of listOfColumns"
+        [nzSortPriority]="column.priority"
+        [nzSortFn]="column.compare"
+       >  {{ column.title }}</th>
+
       </tr>
     </thead>
     <tbody>
