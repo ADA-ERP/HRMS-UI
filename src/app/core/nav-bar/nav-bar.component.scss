@@ -13,13 +13,13 @@
     padding: 0;
     width: 100%;
     z-index: 100;
-    box-shadow: 2px 1px 2px rgb(224, 224, 224);
-    background-color:rgb(255, 255, 255);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    background-color:#fff;
   }
 
   nz-header ul {
     display: flex;
-    justify-content: center;
+    justify-content: start;
   }
   .header-menu {
     line-height: 3.5rem;
@@ -29,9 +29,14 @@
 
 nz-header ul li a{
   text-decoration: none;
-  color: rgb(45, 44, 44);
-  font-family: Poppins;
+  font-size: .8rem;
+  font-weight: 900;
+  font-stretch: condensed;
+  color: rgb(105, 105, 105);
+  font-family: Poppins ;
   &.active{
-    font-weight: 700;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+
   }
 }

@@ -1,9 +1,12 @@
 
- <nz-header>
-    <div class="logo"></div>
+ <nz-header >
+    <div class="logo">
+      <div><h5 nz-typography>HRM-ADA</h5></div>
+    </div>
+
     <ul nz-menu  nzMode="horizontal" >
       <li  nz-menu-item>
-        <a [routerLink]="['/', 'dashboard']" >Dashboard</a>
+        <a [routerLink]="['/', 'dashboard']" routerLinkActive="active">Dashboard</a>
       </li>
 
       <li  nz-menu-item>
@@ -11,11 +14,11 @@
       </li>
 
       <li  nz-menu-item>
-        <a [routerLink]="['/', 'employee']" >Employee</a>
+        <a [routerLink]="['/', 'employee']" routerLinkActive="active" >Employee</a>
       </li>
 
       <li  nz-menu-item>
-        <a [routerLink]="['/', 'setting']" >Setting</a>
+        <a [routerLink]="['/', 'setting']" routerLinkActive="active">Setting</a>
       </li>
     </ul>
   </nz-header>

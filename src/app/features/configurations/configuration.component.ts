@@ -7,7 +7,9 @@ import { configMenu } from './config-menu';
   styleUrls: ['./configuration.component.scss']
 })
 export class ConfigurationComponent implements OnInit {
-  menus=configMenu.menus
+  menus=configMenu.menus;
+  isCollapsed=false;
+
   constructor() { }
 
   ngOnInit(): void {

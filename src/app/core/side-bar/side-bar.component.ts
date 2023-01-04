@@ -9,7 +9,7 @@ import { Menu } from '../models/menu';
 export class SideBarComponent implements OnInit {
   @Input()
   menus: Menu[] = [];
-  
+isCollapsed: any;
   constructor() { }
 
   ngOnInit(): void {

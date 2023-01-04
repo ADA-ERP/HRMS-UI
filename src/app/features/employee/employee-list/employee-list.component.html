@@ -1,5 +1,66 @@
-<div nz-row nzGutter="0">
-  <div nz-col nzSpan="0-24" nzOffset="0-24">
+<div nz-row nzGutter="4">
+  <div nz-col nzSpan="3" nzOffset="9" >
+    <button nz-button nzType="text" nzShape="round" nzSize="default" >
+      <i nz-icon nzType="plus"> </i>
+      Add Employee
+    </button>
+  </div>
 
+    <div nz-col nzSpan="10">
+      <nz-input-group nzSearch nzSize="small" [nzSuffix]="nameTpl">
+        <input nz-input  name="name" placeholder=" Enter employee fullName / employee Id">
+        <ng-template #nameTpl>
+          <button nz-button nzType="text" nzSize="small" nzSearch>
+            <i nz-icon nzType="search"></i>
+          </button>
+        </ng-template>
+      </nz-input-group>
+    </div>
+
+</div>
+<div nz-row nzGutter="4">
+  <div nz-col nzSpan="24" nzOffset="17">
+    <p nz-typography> </p>
+  </div>
+</div>
+<div nz-row nzGutter="4">
+  <div nz-col nzSpan="20" nzOffset="2">
+
+
+    <nz-table #nzTable  nzFooter="total" nzSize="small">
+      <thead>
+        <tr>
+          <th>#</th>
+
+          <th>FullName</th>
+          <th>Position</th>
+          <th>Type Of Employment</th>
+          <th>Status</th>
+          <th>Department</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+          <td>1</td>
+
+          <td>Geber dandk makdlk</td>
+          <td>Geber dandk makdlk</td>
+          <td>Geber dandk makdlk</td>
+          <td>Geber dandk makdlk</td>
+          <td>Geber dandk makdlk</td>
+
+        </tr>
+        <tr >
+          <td>2</td>
+
+          <td>Geber dandk makdlk</td>
+          <td>Geber dandk makdlk</td>
+          <td>Geber dandk makdlk</td>
+          <td>Geber dandk makdlk</td>
+          <td>Geber dandk makdlk</td>
+
+        </tr>
+      </tbody>
+    </nz-table>
   </div>
 </div>
