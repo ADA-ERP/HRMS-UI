@@ -1,0 +1,43 @@
+<div nz-row nzType="flex" nzJustify="start" nzAlign="top" class="main">
+  <div nz-col nzSpan="4">
+    <nz-steps [nzCurrent]="index"  nzType="navigation" nzDirection="vertical" nzSize="small" (nzIndexChange)="onIndexChange($event)">
+      <nz-step nzTitle="Basic Information" nzDescription="This is a description."></nz-step>
+      <nz-step nzTitle="Profile Image" nzDescription="This is a description."></nz-step>
+      <nz-step nzTitle="Contact Information" nzDescription="This is a description."></nz-step>
+      <nz-step nzTitle="Background Information" nzDescription="This is a description."></nz-step>
+      <nz-step nzTitle="Employment" nzDescription="This is a description."></nz-step>
+
+    </nz-steps>
+  </div>
+
+  <div nz-col nzSpan="19">
+    <div [ngSwitch]="index">
+      <div *ngSwitchCase="0"><app-employee-basic (messageEvent)="onIndexChange($event)"></app-employee-basic></div>
+      <div *ngSwitchCase="1">
+        <nz-upload
+        class="avatar-uploader"
+        nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+        nzName="avatar"
+        nzListType="picture-card"
+        [nzShowUploadList]="false"
+        [nzBeforeUpload]="beforeUpload"
+        (nzChange)="handleChange($event)"
+      >
+        <ng-container *ngIf="!avatarUrl">
+          <span class="upload-icon" nz-icon [nzType]="loading ? 'loading' : 'plus'"></span>
+          <div class="ant-upload-text">Upload</div>
+        </ng-container>
+        <img *ngIf="avatarUrl" [src]="avatarUrl" style="width: 100%" />
+      </nz-upload>
+    </div>
+      <div *ngSwitchCase="2"><h5>Contact </h5></div>
+      <div *ngSwitchCase="3">background information</div>
+      <div *ngSwitchCase="4">Employment</div>
+      <div *ngSwitchDefault>output2</div>
+    </div>
+  </div>
+</div>
+
+
+
+
