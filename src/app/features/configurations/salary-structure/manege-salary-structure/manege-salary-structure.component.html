@@ -2,10 +2,10 @@
 (nzBack)="redirectToSalaryStructureList()"
 nzBackIcon
 nzTitle="Salary Structure"
-nzSubtitle="Create/edit Salary Structure"
+generated="Create/edit Salary Structure"
 >
 <nz-page-header-content>
-<form nz-form [formGroup]="salaryStructureForm" 
+<form nz-form [formGroup]="salaryStructureForm"
 (ngSubmit)="_submitForm()" nzLayout="horizontal">
  <div nz-row>
   <nz-form-item nz-tooltip="Salary structure pay band describes name of the structure" nz-col [nzXs]="{ span: 24, offset: 1 }" [nzLg]="{ span:8, offset:1 }">
@@ -56,24 +56,24 @@ nzSubtitle="Create/edit Salary Structure"
       <textarea nz-input formControlName="note" id="note" name="note" [nzAutosize]="true" placeholder="Type about this salary structure"></textarea>
     </nz-form-control>
   </nz-form-item>
-  
+
  </div>
 
  <div nz-row>
   <nz-form-item nz-col [nzXs]="{ span: 23, offset: 1 }" [nzLg]="{ span: 4, offset: 1 }">
-  
+
     <nz-form-control nzSpan="23" nzSm="23" nzOffset="0">
      <button nz-button nzType="default" [nzLoading]="saving" type="submit">Save Structure</button>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item nz-col  [nzXs]="{ span: 23, offset: 1 }" [nzLg]="{ span: 4, offset: 1 }">
-  
+
     <nz-form-control nzSpan="23" nzSm="23" nzOffset="0" *ngIf="strId>0">
       <button nz-button nzType="default" type="button" (click)="showDeleteConfirm()" nzDanger>Delete Structure</button>
      </nz-form-control>
   </nz-form-item>
  </div>
-  
+
 </form>
 </nz-page-header-content>
 </nz-page-header>
