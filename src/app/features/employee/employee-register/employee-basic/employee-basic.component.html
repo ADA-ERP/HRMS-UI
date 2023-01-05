@@ -1,7 +1,5 @@
 
 <nz-page-header
-
-nzBackIcon
 nzTitle="Basic Information"
 
 >
@@ -50,7 +48,7 @@ nzTitle="Basic Information"
       <nz-form-item nz-col [nzXs]="{ span: 24, offset: 1 }" [nzLg]="{ span:6, offset:1 }">
         <nz-form-label nzFor="name" nzSpan="12" nzRequired
         nzTooltipIcon="question-circle"
-         example="exmaple Daniel,Alemu."
+         nzTooltipTitle="example Daniel,Alemu."
          >Middle Name</nz-form-label>
         <nz-form-control nzSpan="23" nzSm="">
           <input nz-input formControlName="name" id="name" name="name" placeholder="Enter Middle Name ">
@@ -60,7 +58,7 @@ nzTitle="Basic Information"
       <nz-form-item nz-col [nzXs]="{ span: 24, offset: 1 }" [nzLg]="{ span:6, offset:1 }">
         <nz-form-label nzFor="name" nzSpan="12" nzRequired
         nzTooltipIcon="question-circle"
-         example="Grade name that best identify from other grades."
+        nzTooltipTitle="example Daniel,Alemu."
          >Last Name</nz-form-label>
         <nz-form-control nzSpan="23" nzSm="">
           <input nz-input formControlName="name" id="name" name="name" placeholder="Enter LastName ">
@@ -101,15 +99,10 @@ nzTitle="Basic Information"
       <nz-form-item nz-col [nzXs]="{ span: 23, offset: 1 }" [nzLg]="{ span: 4, offset: 1 }">
 
         <nz-form-control nzSpan="23" nzSm="23" nzOffset="0">
-         <button nz-button nzType="default" [nzLoading]="saving" type="submit">Save Grade</button>
+         <button nz-button nzType="primary" [nzLoading]="saving" type="submit">Save Basic Info</button>
         </nz-form-control>
       </nz-form-item>
-      <nz-form-item nz-col  [nzXs]="{ span: 23, offset: 1 }" [nzLg]="{ span: 4, offset: 1 }">
 
-        <nz-form-control nzSpan="23" nzSm="23" nzOffset="0" *ngIf="gId>0">
-          <button nz-button nzType="default" type="button" (click)="showDeleteConfirm()" nzDanger>Delete Grade</button>
-         </nz-form-control>
-      </nz-form-item>
      </div>
 
 </form>

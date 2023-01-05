@@ -8,11 +8,12 @@ import { EmployeeComponent } from './employee.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeRegisterComponent } from './employee-register/employee-register.component';
 import { EmployeeBasicComponent } from './employee-register/employee-basic/employee-basic.component';
+import { ProfileImageComponent } from './employee-register/profile-image/profile-image.component';
 
 
 
 @NgModule({
-  declarations: [EmployeeComponent, EmployeeListComponent, EmployeeRegisterComponent, EmployeeBasicComponent],
+  declarations: [EmployeeComponent, EmployeeListComponent, EmployeeRegisterComponent, EmployeeBasicComponent, ProfileImageComponent],
   imports: [
     CommonModule,
     SharedModule,
