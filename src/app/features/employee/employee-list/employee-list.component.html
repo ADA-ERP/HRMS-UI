@@ -1,12 +1,12 @@
-<div nz-row nzGutter="4">
-  <div nz-col nzSpan="3" nzOffset="9" >
-    <button nz-button nzType="text" nzShape="round" nzSize="default" >
+<div nz-row nzGutter="4" nzJustify="center">
+  <div nz-col nzXs="24" nzSm="12" nzMd="10" nzLg="10" nzXl="12"  >
+    <button nz-button nzType="primary" [routerLink]="['employee-register']"  nzShape="round" nzSize="default" >
       <i nz-icon nzType="plus"> </i>
       Add Employee
     </button>
   </div>
 
-    <div nz-col nzSpan="10">
+    <div nz-col nzXs="24" nzSm="12" nzMd="6" nzLg="8" nzXl="8">
       <nz-input-group nzSearch nzSize="small" [nzSuffix]="nameTpl">
         <input nz-input  name="name" placeholder=" Enter employee fullName / employee Id">
         <ng-template #nameTpl>

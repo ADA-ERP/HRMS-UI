@@ -9,14 +9,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./employee-register.component.scss']
 })
 export class EmployeeRegisterComponent implements OnInit {
-avatarUrl: any;
-loading: any;
-handleChange($event: NzUploadChangeParam) {
-throw new Error('Method not implemented.');
-}
-  index = 0;
-beforeUpload: ((file: NzUploadFile,fileList: NzUploadFile[]) => boolean|Observable<boolean>)|undefined;
 
+  index = 0;
   constructor(private route:Router,private router:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -25,7 +19,7 @@ beforeUpload: ((file: NzUploadFile,fileList: NzUploadFile[]) => boolean|Observab
 
 
 
-  onIndexChange(event: number): void {
+  onIndexChange(event: any): void {
     this.index = event;
     switch (this.index) {
       case 0:

@@ -3,11 +3,12 @@ app-nav-bar{
 }
   nz-footer {
     text-align: center;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(241, 241, 241);
+    color: rgb(24, 24, 24);
     }
 
-  .layout {
-    min-height: 100vh;
-  }
-
-
+.footer{
+}
+.container-layout{
+  height: 100%;
+}
