@@ -1,5 +1,9 @@
 <nz-page-header nzTitle="Contact" nzSubtitle="Alemseged Gebremeden">
   <nz-page-header-content>
+    <p nz-paragraph>
+      Ant Design interprets the color system into two levels: a system-level color system and a product-level
+      color system.
+    </p>
     <form
       nz-form
       [formGroup]="contactFrom"
@@ -9,6 +13,7 @@
       <div nz-row>
         <nz-form-item
           nz-col
+          nzOffset="3"
           [nzXs]="{ span: 11, offset: 1 }"
           [nzLg]="{ span: 4, offset: 1 }"
         >
@@ -62,7 +67,7 @@
         >
           <nz-form-label
             nzFor="email"
-            nzSpan="12"
+            nzSpan="24"
             nzRequired
             nzTooltipIcon="question-circle"
             nzTooltipTitle="example Daniel,Alemu."
@@ -79,15 +84,13 @@
           </nz-form-control>
         </nz-form-item>
       </div>
+      <nz-divider nzText="Permanent Address" nzOrientation="left"></nz-divider>
 
-      <div nz-row>
-        <div nz-col nzSpan="18">
-          <nz-card nzBorderless nzTitle="Permanent Address">
             <div nz-row>
               <nz-form-item
               nz-col
-              [nzXs]="{ span: 24, offset: 1 }"
-              [nzLg]="{ span: 6, offset: 1 }"
+              [nzXs]="{ span: 12, offset: 1 }"
+              [nzLg]="{ span: 4, offset: 1 }"
             >
               <nz-form-label
                 nzFor="country"
@@ -107,11 +110,34 @@
                 />
               </nz-form-control>
             </nz-form-item>
+            <nz-form-item
+            nz-col
+            [nzXs]="{ span: 24, offset: 1 }"
+            [nzLg]="{ span: 4, offset: 1 }"
+            >
+            <nz-form-label
+            nzFor="city"
+            nzSpan="12"
+            nzRequired
+            nzTooltipIcon="question-circle"
+            nzTooltipTitle="example Daniel,Alemu."
+            >City</nz-form-label
+            >
+            <nz-form-control nzSpan="23" nzSm="">
+            <input
+            nz-input
+            formControlName="city"
+            id="city"
+            name="city"
+            placeholder="Enter City "
+            />
+            </nz-form-control>
+            </nz-form-item>
 
             <nz-form-item
               nz-col
               [nzXs]="{ span: 24, offset: 1 }"
-              [nzLg]="{ span: 6, offset: 1 }"
+              [nzLg]="{ span: 4, offset: 1 }"
             >
               <nz-form-label
                 nzFor="kebel"
@@ -135,7 +161,7 @@
             <nz-form-item
             nz-col
             [nzXs]="{ span: 24, offset: 1 }"
-            [nzLg]="{ span: 6, offset: 1 }"
+            [nzLg]="{ span: 4, offset: 1 }"
             >
             <nz-form-label
             nzFor="worda"
@@ -148,7 +174,7 @@
             <nz-form-control nzSpan="23" nzSm="">
             <input
             nz-input
-            formControlName="Worda"
+            formControlName="worda"
             id="worda"
             name="worda"
             placeholder="Enter Worda "
@@ -156,34 +182,11 @@
             </nz-form-control>
             </nz-form-item>
 
-            <nz-form-item
-            nz-col
-            [nzXs]="{ span: 24, offset: 1 }"
-            [nzLg]="{ span: 6, offset: 1 }"
-            >
-            <nz-form-label
-            nzFor="city"
-            nzSpan="12"
-            nzRequired
-            nzTooltipIcon="question-circle"
-            nzTooltipTitle="example Daniel,Alemu."
-            >City</nz-form-label
-            >
-            <nz-form-control nzSpan="23" nzSm="">
-            <input
-            nz-input
-            formControlName="city"
-            id="city"
-            name="city"
-            placeholder="Enter City "
-            />
-            </nz-form-control>
-            </nz-form-item>
 
             <nz-form-item
             nz-col
             [nzXs]="{ span: 24, offset: 1 }"
-            [nzLg]="{ span: 6, offset: 1 }"
+            [nzLg]="{ span: 4, offset: 1 }"
             >
             <nz-form-label
             nzFor="subCity"
@@ -205,150 +208,145 @@
             </nz-form-item>
             </div>
 
-        </nz-card>
-        </div>
-     </div>
 
-    <div nz-row>
-      <div nz-col nzSpan="12">
-        <nz-card  nzTitle="Current Address">
+            <nz-divider nzText="Current Address" nzOrientation="left"></nz-divider>
+
+         <div nz-row>
           <nz-form-item
-              nz-col
-              [nzXs]="{ span: 24, offset: 1 }"
-              [nzLg]="{ span: 6, offset: 1 }"
-            >
-              <nz-form-label
-                nzFor="country"
-                nzSpan="12"
-                nzRequired
-                nzTooltipIcon="question-circle"
-                nzTooltipTitle="example Daniel,Alemu."
-                >Country</nz-form-label
-              >
-              <nz-form-control nzSpan="23" nzSm="">
-                <input
-                  nz-input
-                  formControlName="currentCountry"
-                  id="country"
-                  name="country"
-                  placeholder="Enter Country "
-                />
-              </nz-form-control>
-            </nz-form-item>
-
-            <nz-form-item
-              nz-col
-              [nzXs]="{ span: 24, offset: 1 }"
-              [nzLg]="{ span: 6, offset: 1 }"
-            >
-              <nz-form-label
-                nzFor="kebel"
-                nzSpan="12"
-                nzRequired
-                nzTooltipIcon="question-circle"
-                nzTooltipTitle="example Daniel,Alemu."
-                >Kebel</nz-form-label
-              >
-              <nz-form-control nzSpan="23" nzSm="">
-                <input
-                  nz-input
-                  formControlName="currentKebel"
-                  id="Kebel"
-                  name="kebel"
-                  placeholder="Enter Kebel "
-                />
-              </nz-form-control>
-            </nz-form-item>
-
-            <nz-form-item
-            nz-col
-            [nzXs]="{ span: 24, offset: 1 }"
-            [nzLg]="{ span: 6, offset: 1 }"
-            >
-            <nz-form-label
-            nzFor="worda"
-            nzSpan="12"
-            nzRequired
-            nzTooltipIcon="question-circle"
-            nzTooltipTitle="example Daniel,Alemu."
-            >Worda</nz-form-label
-            >
-            <nz-form-control nzSpan="23" nzSm="">
-            <input
-            nz-input
-            formControlName="currentWorda"
-            id="worda"
-            name="worda"
-            placeholder="Enter Worda "
-            />
-            </nz-form-control>
-            </nz-form-item>
-
-            <nz-form-item
-            nz-col
-            [nzXs]="{ span: 24, offset: 1 }"
-            [nzLg]="{ span: 6, offset: 1 }"
-            >
-            <nz-form-label
-            nzFor="city"
-            nzSpan="12"
-            nzRequired
-            nzTooltipIcon="question-circle"
-            nzTooltipTitle="example Daniel,Alemu."
-            >City</nz-form-label
-            >
-            <nz-form-control nzSpan="23" nzSm="">
-            <input
-            nz-input
-            formControlName="currentCity"
-            id="city"
-            name="city"
-            placeholder="Enter City "
-            />
-            </nz-form-control>
-            </nz-form-item>
-
-            <nz-form-item
-            nz-col
-            [nzXs]="{ span: 24, offset: 1 }"
-            [nzLg]="{ span: 6, offset: 1 }"
-            >
-            <nz-form-label
-            nzFor="subCity"
-            nzSpan="12"
-            nzRequired
-            nzTooltipIcon="question-circle"
-            nzTooltipTitle="example Daniel,Alemu."
-            >SubCity</nz-form-label
-            >
-            <nz-form-control nzSpan="23" nzSm="">
-            <input
-              nz-input
-              formControlName="currentSubCity"
-              id="subCity"
-              name="subCity"
-              placeholder="Enter Sub City "
-            />
-            </nz-form-control>
-            </nz-form-item>
-        </nz-card>
-      </div>
-
-    </div>
-      <div nz-row>
-        <nz-form-item
           nz-col
-          [nzXs]="{ span: 23, offset: 1 }"
+          [nzXs]="{ span: 24, offset: 1 }"
           [nzLg]="{ span: 4, offset: 1 }"
         >
-          <nz-form-control nzSpan="23" nzSm="23" nzOffset="0">
+          <nz-form-label
+            nzFor="country"
+            nzSpan="12"
+            nzRequired
+            nzTooltipIcon="question-circle"
+            nzTooltipTitle="example Daniel,Alemu."
+            >Country</nz-form-label
+          >
+          <nz-form-control nzSpan="23" nzSm="">
+            <input
+              nz-input
+              formControlName="currentCountry"
+              id="country"
+              name="country"
+              placeholder="Enter Country "
+            />
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item
+          nz-col
+          [nzXs]="{ span: 24, offset: 1 }"
+          [nzLg]="{ span: 4, offset: 1 }"
+        >
+          <nz-form-label
+            nzFor="kebel"
+            nzSpan="12"
+            nzRequired
+            nzTooltipIcon="question-circle"
+            nzTooltipTitle="example Daniel,Alemu."
+            >Kebel</nz-form-label
+          >
+          <nz-form-control nzSpan="23" nzSm="">
+            <input
+              nz-input
+              formControlName="currentKebel"
+              id="Kebel"
+              name="kebel"
+              placeholder="Enter Kebel "
+            />
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item
+        nz-col
+        [nzXs]="{ span: 24, offset: 1 }"
+        [nzLg]="{ span: 4, offset: 1 }"
+        >
+        <nz-form-label
+        nzFor="worda"
+        nzSpan="12"
+        nzRequired
+        nzTooltipIcon="question-circle"
+        nzTooltipTitle="example Daniel,Alemu."
+        >Worda</nz-form-label
+        >
+        <nz-form-control nzSpan="23" nzSm="">
+        <input
+        nz-input
+        formControlName="currentWorda"
+        id="worda"
+        name="worda"
+        placeholder="Enter Worda "
+        />
+        </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item
+        nz-col
+        [nzXs]="{ span: 24, offset: 1 }"
+        [nzLg]="{ span: 4, offset: 1 }"
+        >
+        <nz-form-label
+        nzFor="city"
+        nzSpan="12"
+        nzRequired
+        nzTooltipIcon="question-circle"
+        nzTooltipTitle="example Daniel,Alemu."
+        >City</nz-form-label
+        >
+        <nz-form-control nzSpan="23" nzSm="">
+        <input
+        nz-input
+        formControlName="currentCity"
+        id="city"
+        name="city"
+        placeholder="Enter City "
+        />
+        </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item
+        nz-col
+        [nzXs]="{ span: 24, offset: 1 }"
+        [nzLg]="{ span: 4, offset: 1 }"
+        >
+        <nz-form-label
+        nzFor="subCity"
+        nzSpan="12"
+        nzRequired
+        nzTooltipIcon="question-circle"
+        nzTooltipTitle="example Daniel,Alemu."
+        >SubCity</nz-form-label
+        >
+        <nz-form-control nzSpan="23" nzSm="">
+        <input
+          nz-input
+          formControlName="currentSubCity"
+          id="subCity"
+          name="subCity"
+          placeholder="Enter Sub City "
+        />
+        </nz-form-control>
+        </nz-form-item>
+         </div>
+
+      <div nz-row >
+        <nz-form-item
+          nz-col
+          [nzXs]="{ span: 18, offset: 3 }"
+          [nzLg]="{ span: 4, offset: 5 }"
+        >
+          <nz-form-control nzSpan="23" nzSm="23" >
             <button
               nz-button
               nzType="primary"
               [nzLoading]="saving"
               type="submit"
             >
-              Save Basic Info
+              Save Contact
             </button>
           </nz-form-control>
         </nz-form-item>

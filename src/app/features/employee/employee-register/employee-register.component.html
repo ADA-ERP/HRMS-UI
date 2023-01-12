@@ -20,7 +20,11 @@
         nzDescription="This is a description."
       ></nz-step>
       <nz-step
-        nzTitle="Background Information"
+      nzTitle="Contact Person"
+      nzDescription="This is a description."
+    ></nz-step>
+      <nz-step
+        nzTitle="Background Info"
         nzDescription="This is a description."
       ></nz-step>
       <nz-step
@@ -44,9 +48,20 @@
 
 
       </div>
-      <div *ngSwitchCase="2"><h5><app-contact></app-contact></h5></div>
-      <div *ngSwitchCase="3">background information</div>
-      <div *ngSwitchCase="4">Employment</div>
+      <div *ngSwitchCase="2">
+        <app-contact
+        (messageEvent)="onIndexChange($event)">
+
+        </app-contact>
+      </div>
+      <div *ngSwitchCase="3">
+        <app-contact-person
+          (messageEvent)="onIndexChange($event)">
+
+        </app-contact-person>
+      </div>
+      <div *ngSwitchCase="4"></div>
+      <div *ngSwitchCase="5">Employment</div>
       <div *ngSwitchDefault>output2</div>
     </div>
   </div>

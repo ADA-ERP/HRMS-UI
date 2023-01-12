@@ -21,22 +21,7 @@ export class EmployeeRegisterComponent implements OnInit {
 
   onIndexChange(event: any): void {
     this.index = event;
-    switch (this.index) {
-      case 0:
-        this.route.navigate(['basic-info'],{relativeTo:this.router});
-        break;
-      case 1:
-        this.route.navigate(['contact-info'],{relativeTo:this.router});
-        break;
-      case 2:
-        this.route.navigate(['background-info'],{relativeTo:this.router});
-        break;
-      case 3:
-        this.route.navigate(['Employment'],{relativeTo:this.router});
-        break;
-      default:
-        this.route.navigate(['basic-info'],{relativeTo:this.router});
-        break;
+
     }
-  }
+  
 }
